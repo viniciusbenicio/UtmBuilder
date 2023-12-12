@@ -10,7 +10,15 @@ namespace UtmBuilder.Core
             Campaign = campaign;
         }
 
-        public Url Url { get; set; }
-        public Campaign Campaign { get; set; }
+        /// <summary>
+        /// URL (Website link)
+        /// </summary>
+        public Url Url { get; }
+        /// <summary>
+        /// Campaign Details
+        /// </summary>
+        public Campaign Campaign { get; }
+
+
     }
 }
