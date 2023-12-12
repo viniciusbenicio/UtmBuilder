@@ -4,12 +4,13 @@ namespace UtmBuilder.Core
 {
     public class Utm
     {
+        public Utm(Url url, Campaign campaign)
+        {
+            Url = url;
+            Campaign = campaign;
+        }
+
         public Url Url { get; set; }
-        public string Source { get; set; }
-        public string Medium { get; set; }
-        public string Name { get; set; }
-        public string Id { get; set; }
-        public string Term { get; set; }
-        public string Content { get; set; }
+        public Campaign Campaign { get; set; }
     }
 }
