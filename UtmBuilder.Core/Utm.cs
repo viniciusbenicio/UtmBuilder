@@ -20,6 +20,7 @@ namespace UtmBuilder.Core
         /// </summary>
         public Campaign Campaign { get; }
 
+        public static implicit operator string(Utm utm) => utm.ToString();
         public override string ToString()
         {
             var segments = new List<string>();
@@ -29,7 +30,6 @@ namespace UtmBuilder.Core
             segments.AddIfNotNull("utm_id", Campaign.Id);
             segments.AddIfNotNull("utm_term", Campaign.Term);
             segments.AddIfNotNull("utm_content", Campaign.Content);
-
             return $"{Url.Address}?{string.Join("&", segments)}";
         }
 
