@@ -8,7 +8,7 @@ namespace UtmBuilder.Core.Tests.ValueObjects
     {
         [TestMethod]
         [DataRow("", "", "", true)]
-        [DataRow("SRC", "", "", true)]
+        [DataRow("src", "", "", true)]
         [DataRow("src", "medium", "", true)]
         [DataRow("src", "medium", "name", false)]
         public void TestCampaign(string source, string medium, string name, bool expectException)
