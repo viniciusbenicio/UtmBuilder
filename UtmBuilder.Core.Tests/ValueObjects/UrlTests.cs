@@ -6,12 +6,14 @@ namespace UtmBuilder.Core.Tests.ValueObjects
     [TestClass]
     public class UrlTests
     {
+        private const string InvalidUrl = "xpto";
+        private const string ValidUrl = "https://google.com";
         [TestMethod]
         public void Dado_uma_url_invalida_deve_retornar_uma_excecao()
         {
             try
             {
-                var url = new Url("xpto");
+                new Url(InvalidUrl);
                 Assert.Fail();
             }
             catch (InvalidUrlException e)
@@ -23,7 +25,9 @@ namespace UtmBuilder.Core.Tests.ValueObjects
         [TestMethod]
         public void Dado_uma_url_valida_nao_deve_retornar_uma_excecao()
         {
-            Assert.Fail();
+            new Url(ValidUrl);
+            Assert.IsTrue(true);
+
         }
     }
 }
